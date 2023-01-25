@@ -23,7 +23,12 @@ class ViewController: UIViewController {
         
 
         playSound(soundName: sender.currentTitle!)
-        print(sender.currentTitle!)
+        sender.alpha = 0.5
+        print("Start")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            sender.alpha = 1
+            print("End")
+        }
         
     }
     
@@ -34,4 +39,3 @@ class ViewController: UIViewController {
     }
 
 }
-
